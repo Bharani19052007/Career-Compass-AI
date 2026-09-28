@@ -97,7 +97,7 @@ function Landing() {
                 <div className="flex items-start gap-3">
                   <div className="grid h-11 w-11 place-items-center rounded-xl bg-secondary text-xl">🚀</div>
                   <div className="min-w-0">
-                    <div className="truncate font-semibold">Frontend Engineer Intern</div>
+                    <div className="truncate font-semibold">Forward Deployed Engineer Intern</div>
                     <div className="text-xs text-muted-foreground">Nebula Labs · Remote · ₹8–12 LPA</div>
                   </div>
                 </div>
