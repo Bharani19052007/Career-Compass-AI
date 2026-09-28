@@ -25,7 +25,7 @@ const features = [
   { icon: GraduationCap, title: "Skill Gap Roadmap", desc: "See exactly what to learn to unlock the next tier of roles. Personalized courses included." },
   { icon: BarChart3, title: "Application Tracker", desc: "Kanban board that follows every application from Saved to Offer." },
   { icon: ShieldCheck, title: "Verified Employers", desc: "We remove ghost jobs. Every posting is verified within 48 hours." },
-  { icon: Zap, title: "1-Click Apply", desc: "Autofill applications with your parsed resume and cover-letter drafts." },
+  { icon: Zap, title: "Easy Apply", desc: "Apply the jobs easyly by use of the AI" },
 ];
 
 const steps = [
