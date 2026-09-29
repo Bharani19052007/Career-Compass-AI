@@ -288,10 +288,12 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
   }
   ::selection {
     background: color-mix(in oklab, var(--brand-purple) 30%, transparent);

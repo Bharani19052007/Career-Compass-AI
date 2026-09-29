@@ -87,8 +87,8 @@ export function AuthLayout({ title, subtitle, children }: { title: string; subti
           <div className="mt-3 flex items-center gap-3">
             <div className="grid h-10 w-10 place-items-center rounded-full bg-secondary text-lg">🧑‍💻</div>
             <div>
-              <div className="text-sm font-semibold">Aarav Sharma</div>
-              <div className="text-xs text-muted-foreground">CS Undergrad · Bengaluru</div>
+              <div className="text-sm font-semibold">Bharanidharan S</div>
+              <div className="text-xs text-muted-foreground">CS Undergrad · Coimbatore</div>
             </div>
           </div>
         </div>

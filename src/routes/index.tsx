@@ -37,13 +37,13 @@ const steps = [
 
 function Landing() {
   return (
-    <div className="min-h-screen bg-hero">
+    <div className="min-h-screen bg-hero overflow-x-hidden flex flex-col w-full">
       <Navbar />
 
       {/* Hero */}
       <section className="mx-auto max-w-7xl px-6 pt-16 pb-24 md:pt-24">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div>
+          <div className="min-w-0">
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
               <Badge variant="outline" className="glass rounded-full px-3 py-1 text-xs">
                 <Sparkles className="mr-1.5 h-3 w-3 text-brand-purple" /> Now in public beta
@@ -51,7 +51,7 @@ function Landing() {
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.05 }}
-              className="mt-6 text-5xl font-bold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl"
+              className="mt-6 text-4xl sm:text-5xl font-bold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl"
             >
               Find Your Dream Job with <span className="text-gradient">AI</span>
             </motion.h1>
@@ -63,11 +63,11 @@ function Landing() {
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }}
-              className="mt-8 flex flex-wrap gap-3"
+              className="mt-8 flex flex-col sm:flex-row flex-wrap gap-3"
             >
-              <Link to="/signup"><Button size="lg" className="gradient-brand text-white shadow-glow">Get Started <ArrowRight className="ml-2 h-4 w-4" /></Button></Link>
+              <Link to="/signup" className="w-full sm:w-auto"><Button size="lg" className="w-full sm:w-auto gradient-brand text-white shadow-glow">Get Started <ArrowRight className="ml-2 h-4 w-4" /></Button></Link>
             </motion.div>
-            <div className="mt-8 flex items-center gap-4 text-xs text-muted-foreground">
+            <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 text-xs text-muted-foreground">
               <div className="flex -space-x-2">
                 {["🧑‍💻","👩‍🎓","🧑‍🎓","👩‍💼"].map((e, i) => (
                   <div key={i} className="grid h-8 w-8 place-items-center rounded-full border-2 border-background bg-secondary text-base">{e}</div>
@@ -80,10 +80,10 @@ function Landing() {
           {/* AI-themed illustration */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7 }}
-            className="relative"
+            className="relative min-w-0"
           >
-            <div className="glass-strong relative rounded-3xl p-6 shadow-glow">
-              <div className="flex items-center justify-between">
+            <div className="glass-strong relative rounded-3xl p-6 shadow-glow w-full overflow-hidden">
+              <div className="flex items-center justify-between gap-2">
                 <div className="flex items-center gap-2">
                   <div className="grid h-10 w-10 place-items-center rounded-xl gradient-brand"><Sparkles className="h-5 w-5 text-white" /></div>
                   <div>
@@ -93,10 +93,10 @@ function Landing() {
                 </div>
                 <Badge className="gradient-brand text-white border-0">94% match</Badge>
               </div>
-              <div className="mt-5 rounded-2xl border border-border/60 bg-card p-4">
-                <div className="flex items-start gap-3">
-                  <div className="grid h-11 w-11 place-items-center rounded-xl bg-secondary text-xl">🚀</div>
-                  <div className="min-w-0">
+              <div className="mt-5 rounded-2xl border border-border/60 bg-card p-4 min-w-0">
+                <div className="flex items-start gap-3 min-w-0">
+                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-secondary text-xl">🚀</div>
+                  <div className="min-w-0 flex-1">
                     <div className="truncate font-semibold">Forward Deployed Engineer Intern</div>
                     <div className="text-xs text-muted-foreground">Nebula Labs · Remote · ₹8–12 LPA</div>
                   </div>
@@ -136,7 +136,7 @@ function Landing() {
         </div>
 
         {/* Stats */}
-        <div className="mt-20 grid grid-cols-2 gap-4 md:grid-cols-4">
+        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 gap-4 md:grid-cols-4">
           {stats.map((s, i) => (
             <motion.div key={s.label}
               initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}
@@ -160,12 +160,12 @@ function Landing() {
           {features.map((f, i) => (
             <motion.div key={f.title}
               initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}
-              className="glass group rounded-2xl p-6"
+              className="glass group rounded-2xl p-6 min-w-0"
             >
-              <div className="grid h-11 w-11 place-items-center rounded-xl gradient-brand shadow-glow transition-transform group-hover:scale-110">
+              <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl gradient-brand shadow-glow transition-transform group-hover:scale-110">
                 <f.icon className="h-5 w-5 text-white" />
               </div>
-              <h3 className="mt-4 text-lg font-semibold">{f.title}</h3>
+              <h3 className="mt-4 text-lg font-semibold truncate">{f.title}</h3>
               <p className="mt-1 text-sm text-muted-foreground">{f.desc}</p>
             </motion.div>
           ))}
@@ -180,9 +180,9 @@ function Landing() {
         </div>
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((s) => (
-            <div key={s.n} className="glass rounded-2xl p-6">
-              <div className="text-sm font-mono text-brand-purple">{s.n}</div>
-              <div className="mt-2 text-lg font-semibold">{s.t}</div>
+            <div key={s.n} className="glass rounded-2xl p-6 min-w-0">
+              <div className="text-sm font-mono text-brand-purple shrink-0">{s.n}</div>
+              <div className="mt-2 text-lg font-semibold truncate">{s.t}</div>
               <p className="mt-1 text-sm text-muted-foreground">{s.d}</p>
             </div>
           ))}
@@ -198,9 +198,9 @@ function Landing() {
               <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Ready to meet your AI career copilot?</h2>
               <p className="mt-3 text-muted-foreground">Free forever for students. Get matched to your first job in minutes.</p>
             </div>
-            <div className="flex gap-3 md:justify-end">
-              <Link to="/signup"><Button size="lg" className="gradient-brand text-white shadow-glow">Create free account</Button></Link>
-              <Link to="/login"><Button size="lg" variant="outline">Sign in</Button></Link>
+            <div className="flex flex-col sm:flex-row gap-3 md:justify-end mt-6 md:mt-0">
+              <Link to="/signup" className="w-full sm:w-auto"><Button size="lg" className="w-full sm:w-auto gradient-brand text-white shadow-glow">Create free account</Button></Link>
+              <Link to="/login" className="w-full sm:w-auto"><Button size="lg" variant="outline" className="w-full sm:w-auto">Sign in</Button></Link>
             </div>
           </div>
         </div>
