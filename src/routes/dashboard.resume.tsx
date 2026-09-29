@@ -240,8 +240,8 @@ function ResumePage() {
         <p className="text-muted-foreground">Upload your resume — we'll parse skills, experience and projects.</p>
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-3">
-        <div className="lg:col-span-2">
+      <div className="grid gap-6 lg:grid-cols-3 min-w-0">
+        <div className="lg:col-span-2 min-w-0">
           <div
             onDragOver={(e) => { e.preventDefault(); setDrag(true); }}
             onDragLeave={() => setDrag(false)}
@@ -283,28 +283,28 @@ function ResumePage() {
           </div>
 
           {uploaded && (
-            <div className="glass mt-6 rounded-2xl p-6">
+            <div className="glass mt-6 rounded-2xl p-6 min-w-0 overflow-hidden">
               <div className="mb-3 flex items-center gap-2">
                 <FileText className="h-4 w-4 text-brand-purple" />
                 <h3 className="font-semibold">Resume preview</h3>
               </div>
-              <div className="rounded-xl bg-secondary p-6 text-sm">
-                <div className="mb-3 border-b pb-3 border-border/50">
-                  <div className="text-lg font-bold">{parsedData.name}</div>
-                  <div className="text-muted-foreground">
+              <div className="rounded-xl bg-secondary p-6 text-sm min-w-0 overflow-hidden">
+                <div className="mb-3 border-b pb-3 border-border/50 min-w-0">
+                  <div className="text-lg font-bold break-words">{parsedData.name}</div>
+                  <div className="text-muted-foreground break-words">
                     {parsedData.email} {parsedData.phone && `· ${parsedData.phone}`}
                   </div>
                 </div>
-                <div className="mb-3">
+                <div className="mb-3 min-w-0">
                   <div className="font-semibold">Education</div>
                   {parsedData.education.map((edu, idx) => (
-                    <div key={idx} className="text-muted-foreground">{edu}</div>
+                    <div key={idx} className="text-muted-foreground break-words">{edu}</div>
                   ))}
                 </div>
-                <div>
+                <div className="min-w-0">
                   <div className="font-semibold">Experience</div>
                   {parsedData.experience.map((exp, idx) => (
-                    <div key={idx} className="text-muted-foreground">{exp}</div>
+                    <div key={idx} className="text-muted-foreground break-words">{exp}</div>
                   ))}
                 </div>
               </div>
@@ -312,8 +312,8 @@ function ResumePage() {
           )}
         </div>
 
-        <aside className="space-y-4">
-          <div className="glass rounded-2xl p-5">
+        <aside className="space-y-4 min-w-0">
+          <div className="glass rounded-2xl p-5 min-w-0">
             <div className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-brand-purple" /><h3 className="font-semibold">Extracted skills</h3></div>
             {parsedData.skills.length > 0 ? (
               <div className="mt-3 flex flex-wrap gap-1.5">
@@ -323,7 +323,7 @@ function ResumePage() {
               <p className="mt-3 text-sm text-muted-foreground">Upload your resume to extract skills.</p>
             )}
           </div>
-          <div className="glass rounded-2xl p-5">
+          <div className="glass rounded-2xl p-5 min-w-0">
             <h3 className="font-semibold">Education</h3>
             {parsedData.education.length > 0 ? (
               <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
@@ -335,7 +335,7 @@ function ResumePage() {
               <p className="mt-2 text-sm text-muted-foreground">No education data yet.</p>
             )}
           </div>
-          <div className="glass rounded-2xl p-5">
+          <div className="glass rounded-2xl p-5 min-w-0">
             <h3 className="font-semibold">Experience</h3>
             {parsedData.experience.length > 0 ? (
               <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
@@ -347,7 +347,7 @@ function ResumePage() {
               <p className="mt-2 text-sm text-muted-foreground">No experience data yet.</p>
             )}
           </div>
-          <div className="glass rounded-2xl p-5">
+          <div className="glass rounded-2xl p-5 min-w-0">
             <h3 className="font-semibold">Projects</h3>
             {parsedData.projects.length > 0 ? (
               <ul className="mt-2 space-y-3 text-sm text-muted-foreground">

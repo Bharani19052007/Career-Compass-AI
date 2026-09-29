@@ -124,11 +124,11 @@ function Profile() {
             {fullName ? fullName.split(" ").map(n => n[0]).slice(0, 2).join("").toUpperCase() : "U"}
           </div>
           <div className="min-w-0 flex-1">
-            <h1 className="text-3xl font-bold tracking-tight">{fullName}</h1>
-            <p className="text-muted-foreground">{headline}</p>
-            <p className="mt-1 text-sm text-muted-foreground">{user?.email} · {location}</p>
+            <h1 className="text-3xl font-bold tracking-tight break-words">{fullName}</h1>
+            <p className="text-muted-foreground break-words">{headline}</p>
+            <p className="mt-1 text-sm text-muted-foreground break-words">{user?.email} · {location}</p>
           </div>
-          <div className="flex gap-2">
+          <div className="flex flex-col sm:flex-row gap-2 w-full md:w-auto shrink-0">
             <input 
               type="file" 
               id="resume-upload" 
@@ -193,26 +193,26 @@ function Profile() {
         </div>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
-        <div className="glass rounded-2xl p-6">
+      <div className="grid gap-6 md:grid-cols-2 min-w-0">
+        <div className="glass rounded-2xl p-6 min-w-0">
           <h3 className="font-semibold">Skills</h3>
           <div className="mt-3 flex flex-wrap gap-1.5">
             {skills.length > 0 ? skills.map((s) => <Badge key={s} className="gradient-brand text-white border-0">{s}</Badge>) : <p className="text-sm text-muted-foreground">No skills added yet.</p>}
           </div>
         </div>
-        <div className="glass rounded-2xl p-6">
+        <div className="glass rounded-2xl p-6 min-w-0">
           <h3 className="font-semibold">Interests</h3>
           <div className="mt-3 flex flex-wrap gap-1.5">
             {interests.length > 0 ? interests.map((s) => <Badge key={s} variant="secondary">{s}</Badge>) : <p className="text-sm text-muted-foreground">No interests added yet.</p>}
           </div>
         </div>
-        <div className="glass rounded-2xl p-6">
+        <div className="glass rounded-2xl p-6 min-w-0">
           <h3 className="font-semibold">Preferred role</h3>
-          <p className="mt-2 text-sm text-muted-foreground">{preferredRole}</p>
+          <p className="mt-2 text-sm text-muted-foreground break-words">{preferredRole}</p>
         </div>
-        <div className="glass rounded-2xl p-6">
+        <div className="glass rounded-2xl p-6 min-w-0">
           <h3 className="font-semibold">Preferred location</h3>
-          <p className="mt-2 text-sm text-muted-foreground">{location} · Open to remote</p>
+          <p className="mt-2 text-sm text-muted-foreground break-words">{location} · Open to remote</p>
         </div>
       </div>
     </div>
